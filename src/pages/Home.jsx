@@ -11,7 +11,8 @@ const Home = () => {
 
     async function fetchData() {
       try {
-        const response = await getTrendingMovies();console.log(response);
+        const response = await getTrendingMovies();
+        console.log(response);
         // setRender(true);
         // setIsLoading(false);
         setMovies(response.data.hits);
@@ -21,7 +22,7 @@ const Home = () => {
       }
     }
     fetchData();
-  }, []);
+  }, [movies]);
 
   return <div>Home</div>;
 };
