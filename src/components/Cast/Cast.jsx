@@ -20,7 +20,7 @@ const Cast = () => {
       }
     }
     fetchData();
-  }, [cast]);
+  }, [cast, movieId]);
 
   return (
     <Gallery>

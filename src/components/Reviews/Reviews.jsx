@@ -20,7 +20,7 @@ const Reviews = () => {
       }
     }
     fetchData();
-  }, [reviews]);
+  }, [reviews, movieId]);
 
   return (
     <>
