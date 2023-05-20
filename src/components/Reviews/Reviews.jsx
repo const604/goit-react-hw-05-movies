@@ -26,7 +26,7 @@ const Reviews = () => {
     <>
       <Info>
         {reviews.length < 1 ? (
-          <p>We don't have any reviews yet</p>
+          <h3>We don't have any reviews yet</h3>
         ) : (
           reviews.map(({ author, content, id }) => (
             <li key={id}>

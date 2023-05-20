@@ -44,11 +44,9 @@ const MovieDetails = () => {
           <p>{movie.overview}</p>
           <h3>User average vote: {movie.vote_count}</h3>
           <div>
-            <h3>
-              Genres:{' '}
-              {movie.genres && movie.genres.map(({ name }) => name).join(', ')}
-            </h3>
+            <h3>Genres: {movie.genres?.map(({ name }) => name).join(', ')}</h3>
           </div>
+          <h3>Data release: {movie.release_date}</h3>
         </Info>
       </MovieContainer>
       <AddInfo>

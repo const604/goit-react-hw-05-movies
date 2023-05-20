@@ -63,22 +63,21 @@ const Movies = () => {
       </SearchBar>
 
       <Gallery>
-        {movies &&
-          movies.map(({ id, title, poster_path }) => (
-            <Link key={id} to={`${id}`} state={{ from: location }}>
-              <li>
-                <img
-                  src={
-                    poster_path
-                      ? `https://image.tmdb.org/t/p/w500/${poster_path}`
-                      : 'https://kartinki.pibig.info/uploads/posts/2023-04/1681549820_kartinki-pibig-info-p-zaglushka-kartinka-arti-krasivo-2.jpg'
-                  }
-                  alt={title}
-                  width={270}
-                />
-              </li>
-            </Link>
-          ))}
+        {movies?.map(({ id, title, poster_path }) => (
+          <Link key={id} to={`${id}`} state={{ from: location }}>
+            <li>
+              <img
+                src={
+                  poster_path
+                    ? `https://image.tmdb.org/t/p/w500/${poster_path}`
+                    : 'https://kartinki.pibig.info/uploads/posts/2023-04/1681549820_kartinki-pibig-info-p-zaglushka-kartinka-arti-krasivo-2.jpg'
+                }
+                alt={title}
+                width={270}
+              />
+            </li>
+          </Link>
+        ))}
       </Gallery>
     </>
   );

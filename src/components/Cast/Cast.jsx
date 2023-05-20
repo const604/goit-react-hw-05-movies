@@ -24,23 +24,27 @@ const Cast = () => {
 
   return (
     <Gallery>
-      {cast.map(({ cast_id, name, character, profile_path }) => (
-        <ImgCast key={cast_id}>
-          <img
-            src={
-              profile_path
-                ? `https://image.tmdb.org/t/p/w200/${profile_path}`
-                : `https://kartinki.pibig.info/uploads/posts/2023-04/1681549767_kartinki-pibig-info-p-zaglushka-kartinka-arti-krasivo-3.jpg`
-            }
-            alt={name}
-            width={200}
-          />
-          <div>
-            <p>{name}</p>
-            <p>Character: {character}</p>
-          </div>
-        </ImgCast>
-      ))}
+      {cast.length < 1 ? (
+        <h3>We don't have any casts yet</h3>
+      ) : (
+        cast.map(({ cast_id, name, character, profile_path }) => (
+          <ImgCast key={cast_id}>
+            <img
+              src={
+                profile_path
+                  ? `https://image.tmdb.org/t/p/w200/${profile_path}`
+                  : `https://kartinki.pibig.info/uploads/posts/2023-04/1681549767_kartinki-pibig-info-p-zaglushka-kartinka-arti-krasivo-3.jpg`
+              }
+              alt={name}
+              width={200}
+            />
+            <div>
+              <p>{name}</p>
+              <p>Character: {character}</p>
+            </div>
+          </ImgCast>
+        ))
+      )}
     </Gallery>
   );
 };
